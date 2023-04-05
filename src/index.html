@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="icon" href="https://open.spotifycdn.com/cdn/images/favicon.0f31d2ea.ico" />
+    <link rel="stylesheet" href="css/style.css"></span>
+    <title>Column Browser</title>
+  </head>
+  <body>
+    <main>
+      <div id="toolbar">
+        <div id="left-section">
+          <div id="playback-controls">
+            <span id="backward"></span>
+            <span id="play-pause" class="play"></span>
+            <span id="forward"></span>
+          </div>
+          <div id="album-artwork"></div>
+        </div>
+        <div id="current-song" class="tape">
+          <span></span>
+          <span></span>
+          <span id="progress-bar">
+            <span class="progress"></span><span></span>
+          </span>
+        </div>
+        <div id="right-section">0%</div>
+      </div>
+      <div id="filter-headers">
+        <div>Genres</div>
+        <div>Artists</div>
+        <div>Albums</div>
+      </div>
+      <div id="filter-data">
+        <div id="genre-data">
+          <table id="genres">
+            <tbody>
+              <tr id="all-genres" class="inactive">
+                <td>All (0 Genres)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="artist-data">
+          <table id="artists">
+            <tbody>
+              <tr id="all-artists" class="inactive">
+                <td>All (0 Artists)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div id="album-data">
+          <table id="albums">
+            <tbody>
+              <tr id="all-albums" class="inactive">
+                <td>All (0 Albums)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id="song-headers">
+        <div id="title">Title</div>
+        <div id="artist">Artist</div>
+        <div id="album">Album</div>
+      </div>
+      <div id="song-data">
+        <table id="songs">
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="status-bar">0 songs</div>
+    </main>
+    <script>let SpotifyPlayer,deviceId,previousTouch;</script>
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>

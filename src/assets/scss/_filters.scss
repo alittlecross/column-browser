@@ -1,0 +1,58 @@
+@use "sass:math";
+
+$filter-data-background-color: #1b1b1b;
+$filter-headers-background-color: #545454;
+$filters-border-color: #404040;
+$one-third: math.percentage(math.div(1, 3));
+
+#filter-headers {
+  display: flex;
+  flex: 0 0 22.5px;
+
+  >div {
+    overflow: hidden;
+    flex: 0 0 $one-third;
+    padding: 2.25px;
+    border-radius: 5px;
+    background-color: $filter-headers-background-color;
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+#filter-data {
+  display: flex;
+  flex: 0 0 316px;
+  border-bottom: 1px solid $filters-border-color;
+  background-color: $filter-data-background-color;
+
+  >div {
+    overflow: scroll;
+    height: 315px;
+    flex: 0 0 $one-third;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &:nth-child(1) {
+      border-right: 0.5px solid $filters-border-color;
+    }
+
+    &:nth-child(2) {
+      border-right: 0.5px solid $filters-border-color;
+      border-left: 0.5px solid $filters-border-color;
+    }
+
+    &:nth-child(3) {
+      border-left: 0.5px solid $filters-border-color;
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    td {
+      overflow: hidden;
+      padding: 3px 4px;
+    }
+  }
+}

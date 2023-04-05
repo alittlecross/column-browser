@@ -1,0 +1,10 @@
+$status-bar-background-color: #1b1b1b;
+$status-bar-border-color: #404040;
+
+#status-bar {
+  flex: 0 0 26px;
+  padding: 4px 0 6px;
+  border-top: 1px solid $status-bar-border-color;
+  background-color: $status-bar-background-color;
+  text-align: center;
+}

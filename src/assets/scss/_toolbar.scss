@@ -1,0 +1,164 @@
+$album-artwork-background-color: #6e6e6e;
+$button-active-background-color: #313131;
+$button-hover-background-color: #262626;
+$progress-bar-background-color: #555;
+$progress-bar-progress-background-color: #bababa;
+$current-song-background-color: #3c3c3c;
+$current-song-artists-album-color: #9c9c9c;
+$toolbar-background-color: #1a1a1a;
+
+#toolbar {
+  display: flex;
+  flex: 0 0 51px;
+  background-color: $toolbar-background-color;
+}
+
+#left-section {
+  display: flex;
+  flex: 0 0 31.1%;
+  align-items: center;
+}
+
+#playback-controls {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+
+  >span {
+    width: 32px;
+    height: 28px;
+    border-radius: 6px;
+    margin: 0 1px;
+
+    &:hover {
+      background-color: $button-hover-background-color;
+    }
+
+    &:active {
+      background-color: $button-active-background-color;
+    }
+  }
+}
+
+#backward {
+  background: url("../img/backward.png") no-repeat 45% 50% / 23px;
+
+  &:hover {
+    background-image: url("../img/backward-hover.png");
+  }
+
+  &:active {
+    background-image: url("../img/backward-active.png");
+  }
+}
+
+#play-pause {
+  &.pause {
+    background: url("../img/pause.png") no-repeat center / 13.5px;
+
+    &:hover {
+      background-image: url("../img/pause-hover.png");
+    }
+
+    &:active {
+      background-image: url("../img/pause-active.png");
+    }
+  }
+
+  &.play {
+    background: url("../img/play.png") no-repeat 55% 50% / 16px;
+
+    &:hover {
+      background-image: url("../img/play-hover.png");
+    }
+
+    &:active {
+      background-image: url("../img/play-active.png");
+    }
+  }
+}
+
+#forward {
+  background: url("../img/forward.png") no-repeat 55% 50% / 23px;
+
+  &:hover {
+    background-image: url("../img/forward-hover.png");
+  }
+
+  &:active {
+    background-image: url("../img/forward-active.png");
+  }
+}
+
+#album-artwork {
+  height: 43px;
+  flex: 0 0 43px;
+  border-radius: 3px 0 0 3px;
+  background: $album-artwork-background-color url("../img/crotchet.png") no-repeat center / 13.5px;
+}
+
+#current-song {
+  display: flex;
+  overflow: hidden;
+  height: 43px;
+  flex: auto;
+  flex-flow: column;
+  border-radius: 0 3px 3px 0;
+  margin: auto;
+  background-color: $current-song-background-color;
+  text-align: center;
+
+  &.tape {
+    background: $current-song-background-color url("../img/tape.png") no-repeat 50% 45% / 41px;
+  }
+
+  >span {
+    overflow: hidden;
+    flex: 0 0 20px;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:nth-child(1) {
+      padding: 3.5px 5px 0;
+    }
+
+    &:nth-child(2) {
+      padding: 0 5px 3.5px;
+      color: $current-song-artists-album-color;
+    }
+  }
+}
+
+#progress-bar {
+  display: flex;
+  flex: 0 0 3px;
+  background-color: $progress-bar-background-color;
+
+  >span:nth-child(1) {
+    flex: 0 0 0;
+    background-color: $progress-bar-progress-background-color;
+  }
+}
+
+.progress {
+  animation: progress 1ms linear forwards paused;
+}
+
+@keyframes progress {
+  from {
+    flex-basis: 0%;
+  }
+
+  to {
+    flex-basis: 100%;
+  }
+}
+
+#right-section {
+  display: flex;
+  flex: 0 0 31.1%;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
